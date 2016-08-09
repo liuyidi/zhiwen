@@ -1,3 +1,12 @@
+### 目录说明
+
+- controller 控制层
+- dao        数据访问对象
+- dto        数据传输对象(实体对象)
+- entity (PO,bean) 		数据库表中的记录在java对象中的显示状态
+- service (BO,bussiness) 业务逻辑
+- utils      工具层
+
 ### 1.用户中心
 
 1.1 全部动态

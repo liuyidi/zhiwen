@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/question")
-public class questionController {
+public class QuestionController {
 	
 	/**
 	 * 话题列表
