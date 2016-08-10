@@ -1,5 +1,9 @@
 package com.netease.is.service;
 
+import java.util.List;
+
+import com.netease.is.model.Question;
+
 /**
  * 问题的服务层
  * @author liuyidi <liuyidi1993@gmail.com>

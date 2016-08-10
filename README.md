@@ -8,7 +8,7 @@
 - utils      工具层
 
 ### 0. 登录注册退出
-
+- [java demo](http://www.programcreek.com/java-api-examples/index.php?source_dir=bugkillers-master/bugkillers-core/src/main/java/org/bugkillers/core/service/impl/UserServiceImpl.java)
 
 ### 1.用户中心
 
