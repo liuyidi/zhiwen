@@ -30,6 +30,17 @@ public class LoginController {
 	}
 	
 	/**
+	 * 注册页面
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String register(HttpServletRequest request, HttpServletResponse response){
+		return "pages/register";
+	}
+	
+	/**
 	 * 用户登出
 	 * @param request
 	 * @param response
