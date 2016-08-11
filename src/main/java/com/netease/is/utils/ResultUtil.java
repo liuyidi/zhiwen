@@ -1,4 +1,4 @@
-package com.netease.is.util;
+package com.netease.is.utils;
 
 public class ResultUtil {
 

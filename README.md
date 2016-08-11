@@ -32,8 +32,8 @@
 - 关注问题      attentionQuestion
 - 取消关注问题   cancelAttentionQuestion
 - 问题列表
-	- 按时间排序
-	- 按关注数排序
+	- 按时间排序  questionList?sort=time
+	- 按关注数排序 questionList?sort=attention
 
 ### 3.话题标签
 
