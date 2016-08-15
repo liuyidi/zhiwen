@@ -1,10 +1,12 @@
 package com.netease.is.service.impl;
 
-import org.omg.CORBA.UserException;
+import java.util.logging.Logger;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+
+import com.netease.is.dao.UserDao;
 import com.netease.is.service.UserService;
-
-import freemarker.log.Logger;
 
 //public class UserServiceImpl implements UserService{
 //	
@@ -16,3 +18,4 @@ import freemarker.log.Logger;
 //		return null;
 //	}
 //}
+

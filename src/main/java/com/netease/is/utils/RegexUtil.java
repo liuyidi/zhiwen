@@ -1,4 +1,4 @@
-package com.netease.is.utils;
+package com.netease.is.util;
 
 /**
  * 通用正则
@@ -7,5 +7,17 @@ package com.netease.is.utils;
  * @version v1.0
  */
 public class RegexUtil {
-
+	
+	/**
+	 * Email正则
+	 */
+	
+	
+	/**
+	 * 手机号正则
+	 */
+	
+	/**
+	 * 金额数字正则
+	 */
 }
