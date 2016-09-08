@@ -36,6 +36,11 @@ public class UserController {
 		return "info";
 	}
 	
+	@RequestMapping(value = "/getProfile", method = RequestMethod.GET)
+	public String getProfile(){
+		//TODO 返回用户信息(avatar,userid,nickname,etc..)
+		return null;
+	}
 	
 	/**
 	 * 更新用户的基本信息
@@ -44,14 +49,18 @@ public class UserController {
 	 */
 	@RequestMapping(value = "/saveProfile", method = RequestMethod.POST)
 	public String saveprofile(){
+		//TODO 得到csrf_token
+		//TODO param nickname&gender&birthYear&birthMonth&birthDay
 		return "";
+		//return code=200
 	}
 	
 	/**
 	 * 用户绑定手机号
 	 * @param phoneNum 手机号
+	 * @param verifyCode 手机验证码
 	 */
-	@RequestMapping(value = "/savePhoneNum", method = RequestMethod.GET)
+	@RequestMapping(value = "/savePhoneNum", method = RequestMethod.POST)
 	public @ResponseBody String savePhotoNum(HttpServletRequest request, HttpServletResponse response) {
 		return "";
 	}
@@ -63,5 +72,15 @@ public class UserController {
 	public @ResponseBody String getVerifyCode(@RequestParam("phonenum") String phoneNum){
 		return phoneNum;
 		
+	}
+	
+	/**
+	 * 用户保存头像
+	 * @param avatar
+	 * @return
+	 */
+	@RequestMapping(value = "/saveAvatar", method = RequestMethod.POST)
+	public @ResponseBody String saveAvatar(@RequestParam("avatar") String avatar){
+		return null;
 	}
 }
