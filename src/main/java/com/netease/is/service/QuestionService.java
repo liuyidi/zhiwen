@@ -12,26 +12,26 @@ import com.netease.is.model.Question;
  */
 public interface QuestionService {
 
-	/**
-	 * 根据问题id去查询问题
-	 * @param id
-	 * @return
-	 */
-	Question findById(Integer id);
-	
-	/**
-	 * 通过标签id去查找一组问题
-	 * @param tagId
-	 * @return
-	 */
-	List<Question> findByTagId(Integer tagId);
-	
-	/**
-	 * 查询最新创建的offset个问题
-	 * @param offset
-	 * @return
-	 */
-	List<Question> filterByCreate(Integer offset);
+//	/**
+//	 * 根据问题id去查询问题
+//	 * @param id
+//	 * @return
+//	 */
+//	Question findById(Integer id);
+//	
+//	/**
+//	 * 通过标签id去查找一组问题
+//	 * @param tagId
+//	 * @return
+//	 */
+//	List<Question> findByTagId(Integer tagId);
+//	
+//	/**
+//	 * 查询最新创建的offset个问题
+//	 * @param offset
+//	 * @return
+//	 */
+//	List<Question> filterByCreate(Integer offset);
 	
 	
 }

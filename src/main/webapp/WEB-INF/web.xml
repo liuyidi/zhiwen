@@ -28,4 +28,11 @@
 		<!-- mvc-dispatcher拦截所有的请求 -->
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
+	
+	<!-- 监听路由 -->
+	<listener>
+	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>	
+	
+	
 </web-app>

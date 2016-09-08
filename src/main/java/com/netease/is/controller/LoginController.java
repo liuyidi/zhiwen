@@ -3,7 +3,7 @@ package com.netease.is.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.shiro.web.util.WebUtils;
+//import org.apache.shiro.web.util.WebUtils;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,8 +48,8 @@ public class LoginController {
 	 */
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public void logout(HttpServletRequest request, HttpServletResponse response) throws Exception{
-		logoutService.logout(request, response);
-		WebUtils.issueRedirect(request, response, "/login");
+//		logoutService.logout(request, response);
+//		WebUtils.issueRedirect(request, response, "/login");
 	}
 	
 	/**

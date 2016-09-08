@@ -23,9 +23,9 @@ public class UserController {
 	 * 用户中心首页
 	 * @return
 	 */
-	@RequestMapping("index")
+	@RequestMapping("/index")
 	public String index(){
-		
+		//TODO 用户中心基本信息
 		return "user/index";
 	}
 	
