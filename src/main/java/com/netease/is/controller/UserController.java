@@ -1,13 +1,20 @@
 package com.netease.is.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.netease.is.response.BaseResponse;
+import com.netease.is.service.UserService;
 
 
 /**
@@ -17,7 +24,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController extends BaseController{
+	
+	@Autowired
+	private UserService userService;
 	
 	/**
 	 * 用户中心首页
@@ -37,9 +47,12 @@ public class UserController {
 	}
 	
 	@RequestMapping(value = "/getProfile", method = RequestMethod.GET)
-	public String getProfile(){
+	@ResponseBody
+	public BaseResponse getProfile(){
 		//TODO 返回用户信息(avatar,userid,nickname,etc..)
-		return null;
+		String id = "liuyidi";
+		BaseResponse data = userService.getUserById(id);
+		return data;
 	}
 	
 	/**
@@ -61,7 +74,8 @@ public class UserController {
 	 * @param verifyCode 手机验证码
 	 */
 	@RequestMapping(value = "/savePhoneNum", method = RequestMethod.POST)
-	public @ResponseBody String savePhotoNum(HttpServletRequest request, HttpServletResponse response) {
+	@ResponseBody 
+	public String savePhotoNum(HttpServletRequest request, HttpServletResponse response) {
 		return "";
 	}
 	
