@@ -1,13 +1,26 @@
 package com.netease.is.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.netease.is.constants.RetCode;
+import com.netease.is.model.User;
+import com.netease.is.response.BaseResponse;
+import com.netease.is.service.UserService;
 
 
 /**
@@ -16,30 +29,37 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  */
 @Controller
-@RequestMapping("/user")
-public class UserController {
+@RequestMapping("/api/user")
+public class UserController extends BaseController{
+	
+	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LogManager.getLogger(UserController.class);
+			
+//	@Autowired
+//	private UserService userService;
 	
 	/**
-	 * 用户中心首页
+	 * 得到用户基本信息
 	 * @return
 	 */
-	@RequestMapping("/index")
-	public String index(){
-		//TODO 用户中心基本信息
-		return "user/index";
-	}
-	
-	
-	
-	@RequestMapping("/info")
-	public String info(){
-		return "info";
-	}
-	
 	@RequestMapping(value = "/getProfile", method = RequestMethod.GET)
-	public String getProfile(){
+	@ResponseBody
+	public Map<String, Object> getProfile(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		//TODO 返回用户信息(avatar,userid,nickname,etc..)
-		return null;
+		Integer errorCode = RetCode.SUCCESS;
+		Map<String, Object> data = new HashMap<String, Object>();
+		Integer userId = 10001;
+		List<User> list = null;
+		if(userId != null){
+			list = null;
+		}else{
+			errorCode = RetCode.NOT_LOGIN;
+		}
+		
+		data.put("errorCode", errorCode);
+		data.put("data", list);
+		data.put("msg", "返回成功");
+		return data;
 	}
 	
 	/**
@@ -61,7 +81,8 @@ public class UserController {
 	 * @param verifyCode 手机验证码
 	 */
 	@RequestMapping(value = "/savePhoneNum", method = RequestMethod.POST)
-	public @ResponseBody String savePhotoNum(HttpServletRequest request, HttpServletResponse response) {
+	@ResponseBody 
+	public String savePhotoNum(HttpServletRequest request, HttpServletResponse response) {
 		return "";
 	}
 	

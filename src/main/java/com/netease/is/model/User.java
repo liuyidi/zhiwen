@@ -10,17 +10,30 @@ public class User {
 	
 	private Integer id;
 	
-	private String userName;
+	private Integer userid;
+	
+	private String username;
 	
 	private String password;
 	
 	private String email;
 	
-	private String avatarUrl;
+	private String avatar;
 	
 	private String sex;
 	
 	private String description;
+	
+	public User(){
+		super();
+	}
+	
+	public User(Integer userid, String username, String password, String avatar){
+		this.userid = userid;
+		this.username = username;
+		this.password = password;
+		this.avatar = "xxx.jpg";
+	}
 
 	public Integer getId() {
 		return id;
@@ -30,12 +43,20 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public Integer getUserid() {
+		return userid;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -54,12 +75,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getAvatarUrl() {
-		return avatarUrl;
+	public String getAvatar() {
+		return avatar;
 	}
 
-	public void setAvatarUrl(String avatarUrl) {
-		this.avatarUrl = avatarUrl;
+	public void setAvatar(String avatar) {
+		this.avatar = avatar;
 	}
 
 	public String getSex() {
@@ -77,4 +98,7 @@ public class User {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+	
 }

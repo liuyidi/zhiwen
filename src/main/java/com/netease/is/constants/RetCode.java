@@ -9,6 +9,7 @@ package com.netease.is.constants;
 public interface RetCode {
 	
 	int SUCCESS = 0;
+	int NOT_LOGIN = 1;		//没有登录
 	int PARAM_EMPTY = 1000;  //参数为空
 	int REGIST_EMAIL_EXIST = 1001; //邮箱已经存在
 	int REGIST_NAME_EXIST = 1002;  //用户名已经存在
