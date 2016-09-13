@@ -42,7 +42,7 @@ public class UserController extends BaseController{
 	 * 得到用户基本信息
 	 * @return
 	 */
-	@RequestMapping(value = "/getProfile", method = RequestMethod.GET)
+	@RequestMapping(value = "/getProfile", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public Map<String, Object> getProfile(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		//TODO 返回用户信息(avatar,userid,nickname,etc..)
@@ -68,6 +68,7 @@ public class UserController extends BaseController{
 	 * @return
 	 */
 	@RequestMapping(value = "/saveProfile", method = RequestMethod.POST)
+	@ResponseBody
 	public String saveprofile(){
 		//TODO 得到csrf_token
 		//TODO param nickname&gender&birthYear&birthMonth&birthDay
