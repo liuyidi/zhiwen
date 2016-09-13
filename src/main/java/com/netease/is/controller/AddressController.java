@@ -3,6 +3,8 @@ package com.netease.is.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.netease.is.service.AddressService;
@@ -18,9 +20,9 @@ public class AddressController {
 	 * 获取所有收货地址
 	 * @return
 	 */
-	@RequestMapping("/list.json")
+	@RequestMapping(value = "/list.json", method = RequestMethod.POST)
 	@ResponseBody
-	public String addressList(){
+	public String addressList(@RequestParam("userid") int userid){
 		return null;
 	}
 	
