@@ -2,6 +2,7 @@ package com.netease.is.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 //import org.apache.shiro.web.util.WebUtils;
 
@@ -25,7 +26,7 @@ public class LoginController {
 	 * @return
 	 */
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String login(HttpServletRequest request, HttpServletResponse response){
+	public String login(HttpServletRequest request, HttpServletResponse response, HttpSession session){
 		return "pages/login";
 	}
 	

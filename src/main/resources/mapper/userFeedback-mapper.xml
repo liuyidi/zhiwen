@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.is.dao.UserFeedbackDao">
+	<!-- 查询所有的用户反馈 -->
+	<select id="getAllUserFeedback" resultType="com.netease.is.model.UserFeedback">
+		select * from zw_feedback;
+	</select>
+	
+	<!-- 新增用户反馈 -->
+	<insert id="addNewFeedback" parameterType="com.netease.is.model.UserFeedback">
+	INSERT INTO zw_feedback (fid, content, phone, email) VALUES (#{fid},#{content},#{phone},#{email})
+	</insert>
+	
+	<!-- 根据用户反馈ID查询用户反馈 -->
+	<select id="getUserFeedbackById" resultType="com.netease.is.model.UserFeedback">
+		select * from zw_feedback f where f.fid=#{fid};
+	</select>
+</mapper>

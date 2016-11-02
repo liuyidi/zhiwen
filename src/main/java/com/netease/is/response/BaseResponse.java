@@ -1,13 +1,20 @@
 package com.netease.is.response;
 
+import java.io.Serializable;
+
 /**
  * 基础的响应值
  * @author liuyidi <liuyidi1993@gmail.com>
  * @date 2016年8月11日
  * @version v1.0
  */
-public class BaseResponse {
+public class BaseResponse<T> implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * 响应是否成功 默认成功
 	 */
@@ -21,19 +28,19 @@ public class BaseResponse {
 	/**
 	 * 响应编码
 	 */
-	private String code;
+	private int code;
 	
 	public BaseResponse() {   //继承父类
 		super();
 	}
 	//多态
-	public BaseResponse(boolean success,String msg, String code){
+	public BaseResponse(boolean success,String msg, int code){
 		this.success = success;
 		this.msg = msg;
 		this.code = code;
 	}
 	
-	public BaseResponse(String msg, String code){
+	public BaseResponse(String msg, int code){
 		this(false, msg, code);
 	}
 	
@@ -52,14 +59,11 @@ public class BaseResponse {
 	public void setMsg(String msg) {
 		this.msg = msg;
 	}
-
-	public String getCode() {
+	public int getCode() {
 		return code;
 	}
-
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
-	
 	
 }
