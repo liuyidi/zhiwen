@@ -22,11 +22,15 @@ public class UserFeedbackDaoImpl implements UserFeedbackDao {
 	@Override
 	public boolean addNewFeedback(UserFeedback feedback) {
 		if (feedback != null) {
-			//addObject(feedback);
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	@Override
+	public UserFeedback getUserFeedbackById(Integer fid) {
+		return null;
 	}
 	
 	@Override

@@ -20,6 +20,14 @@ public interface UserFeedbackService {
 	public boolean addNewFeedback(UserFeedback feedback);
 	
 	/**
+	 * 根据fid获取用户反馈信息
+	 * @param fid
+	 * @return
+	 */
+	public UserFeedback queryUserFeedbackById(Integer fid);	
+	
+	
+	/**
 	 * 获取用户反馈信息列表
 	 * @param startTime
 	 * @param endTime

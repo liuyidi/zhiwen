@@ -8,6 +8,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,6 +35,14 @@ public class UserFeedbackController {
 	@Autowired
 	private UserFeedbackService userFeedbackService;
 	
+	/**
+	 * 添加用户反馈信息
+	 * @param userfeedback
+	 * @param request
+	 * @param response
+	 * @param sessioin
+	 * @return
+	 */
 	@RequestMapping(value = "/add.json", method = RequestMethod.POST)
 	public BaseResponse addFeedback(@RequestBody UserFeedback userfeedback, HttpServletRequest request,
 			HttpServletResponse response, HttpSession sessioin) {
@@ -43,10 +53,29 @@ public class UserFeedbackController {
 			res.setCode(RetCode.SUCCESS);
 			res.setMsg("添加用户反馈信息成功！");
 		} else {
+			res.setCode(RetCode.ERROR);
 			res.setMsg("添加用户反馈失败！");
 		}
 		
 		return res;	
+	}
+	
+	/**
+	 * 查询单个用户反馈信息
+	 */
+	@RequestMapping(value = "/{fid}", method = RequestMethod.GET)
+	public BaseResponse getFeedback(@PathVariable Integer fid, HttpServletRequest request,
+			HttpServletResponse response, HttpSession session) {
+		BaseResponse res = new BaseResponse();
+		if (StringUtils.isEmpty(fid)) {
+			res.setCode(RetCode.PARAM_EMPTY);
+			res.setMsg("参数为空");
+		} else {
+			UserFeedback userfeedback = userFeedbackService.queryUserFeedbackById(fid);
+			res.setCode(RetCode.SUCCESS);
+			res.setData(userfeedback);
+		}
+		return res;
 	}
 	
 }

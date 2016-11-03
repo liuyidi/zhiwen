@@ -13,4 +13,5 @@ public interface RetCode {
 	int PARAM_EMPTY = 1000;  //参数为空
 	int REGIST_EMAIL_EXIST = 1001; //邮箱已经存在
 	int REGIST_NAME_EXIST = 1002;  //用户名已经存在
+	int ERROR = 400;         //服务器错误
 }

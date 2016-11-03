@@ -31,6 +31,15 @@ public class UserFeedbackServiceImpl implements UserFeedbackService {
 		return userfeedbackdao.addNewFeedback(feedback);
 	}
 	
+	@Override
+	public UserFeedback queryUserFeedbackById(Integer fid) {
+		UserFeedback feedback = userfeedbackdao.getUserFeedbackById(fid);
+		if (feedback != null) {
+			return feedback;
+		}
+		return null;
+	}
+	
 	/**
 	 * 获取用户反馈信息列表
 	 * @param startTime

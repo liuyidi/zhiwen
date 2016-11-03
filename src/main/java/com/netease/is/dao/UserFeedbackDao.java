@@ -20,6 +20,13 @@ public interface UserFeedbackDao {
 	public boolean addNewFeedback(UserFeedback feedback);
 	
 	/**
+	 * 根据用户反馈ID查询该反馈
+	 * @param fid
+	 * @return
+	 */
+	public UserFeedback getUserFeedbackById(Integer fid);
+	
+	/**
 	 * 用户反馈结果条件查询
 	 */
 	public List<UserFeedback> getFeedbackList(long startTime, long endTime);

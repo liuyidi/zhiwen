@@ -12,7 +12,7 @@
 	</insert>
 	
 	<!-- 根据用户反馈ID查询用户反馈 -->
-	<select id="getUserFeedbackById" resultType="com.netease.is.model.UserFeedback">
+	<select id="getUserFeedbackById" parameterType="java.lang.Integer" resultType="com.netease.is.model.UserFeedback">
 		select * from zw_feedback f where f.fid=#{fid};
 	</select>
 </mapper>

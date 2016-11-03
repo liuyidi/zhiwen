@@ -16,8 +16,6 @@ public class UserFeedback {
 	
 	private String email;
 	
-	private boolean isLogin = false;
-
 	public long getFid() {
 		return fid;
 	}
@@ -48,14 +46,6 @@ public class UserFeedback {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public boolean isLogin() {
-		return isLogin;
-	}
-
-	public void setLogin(boolean isLogin) {
-		this.isLogin = isLogin;
 	}
 
 }

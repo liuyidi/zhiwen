@@ -16,9 +16,9 @@ public class BaseResponse<T> implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 响应是否成功 默认成功
+	 * 响应数据
 	 */
-	private boolean success = true;
+	private Object data;
 	
 	/**
 	 * 响应信息描述
@@ -26,7 +26,7 @@ public class BaseResponse<T> implements Serializable{
 	private String msg;
 	
 	/**
-	 * 响应编码
+	 * 响应编码(success or error)
 	 */
 	private int code;
 	
@@ -34,8 +34,8 @@ public class BaseResponse<T> implements Serializable{
 		super();
 	}
 	//多态
-	public BaseResponse(boolean success,String msg, int code){
-		this.success = success;
+	public BaseResponse(Object data,String msg, int code){
+		this.data = data;
 		this.msg = msg;
 		this.code = code;
 	}
@@ -44,14 +44,12 @@ public class BaseResponse<T> implements Serializable{
 		this(false, msg, code);
 	}
 	
-	public boolean isSuccess() {
-		return success;
+	public Object getData() {
+		return data;
 	}
-
-	public void setSuccess(boolean success) {
-		this.success = success;
+	public void setData(Object data) {
+		this.data = data;
 	}
-
 	public String getMsg() {
 		return msg;
 	}
